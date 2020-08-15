@@ -1,0 +1,15 @@
+DROP TABLE IF EXISTS users;
+DROP TABLE IF EXISTS codes;
+
+CREATE TABLE users(
+    id_user INTEGER PRIMARY KEY AUTOINCREMENT,
+    user_name TEXT UNIQUE NOT NULL,
+    password TEXT NOT NULL
+);
+
+CREATE TABLE codes(
+    id_code INTEGER PRIMARY KEY AUTOINCREMENT,
+    code TEXT UNIQUE NOT NULL,
+    description TEXT NOT NULL
+);
+

@@ -1,0 +1,42 @@
+/*Configuracion de Style para la pagina web*/
+/*Agregamos las funtes que se utilizaran para la pagina web*/
+@font-face{
+    font-family: "Alata";
+    src: url('fonts/Alata/Alata-Regular.ttf') format('truetype');
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background:url('background/imgConstruccion.jpg');
+    background-size: cover;
+    font-family: "Alata";
+}
+
+.login{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 350px;
+    height: 420px;
+    padding: 80px 40px;
+    box-sizing: border-box;
+    background: rgba(0,0,0,.5);
+}
+
+.title-login{
+    font-family: "Alata";
+    font-weight: bold;
+}
+
+.userlogo{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    overflow: hidden;
+    position: absolute;
+    top: calc(-100px / 2);
+    left: calc(50% - 50px);
+}
+

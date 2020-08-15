@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+  <title>Physical Inventory | {%block title%}{%endblock%}</title>
+  <link rel="stylesheet" href="{{url_for('static',filename='style.css')}}" />
+  <link rel="stylesheet" href="{{url_for('static',filename='bootstrap.min.css')}}"/>
+
+  <!-- Navegador de Barra-->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">Physical Inventory</a>
+    
+    <ul class="nav">
+      {% if g.user %} 
+      <li class="nav-item">{{g.user['username']}}</li>
+      <li class="nav-item">
+        <a class="nav-link" href="{{url_for('auth.logout')}}">Logout</a>
+      </li>
+      {% else %}
+      <li class="nav-item">
+        <a class="nav-link text-secondary" href="{{url_for('auth.register')}}">Register</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-secondary" href="{{url_for('auth.login')}}">Login</a>
+      </li>
+      {% endif %}
+
+    </ul>
+  </nav>
+
+  <!-- section de content-->
+  <section class="content">
+    <header>
+      {%block header%}{%endblock%}
+    </header>
+    {% for message in get_flashed_messages() %}
+      <div class="flash">{{message}}</div>
+    {% endfor %}
+    <div>
+      {%block content%}{%endblock%}
+    </div>
+  </section>
+</html>
