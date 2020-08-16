@@ -31,12 +31,23 @@
       {%block header%}{%endblock%}
     </header>
     {% for message in get_flashed_messages() %}
-    <div class="alert alert-danger alert-dismissible fade show" role="alert">
-      {{message}}
-      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-        <span aria-hidden="true">&times;</span>
-      </button>
+    <div class="message_wrapper">
+      <div class="message_backdrop"></div>
+      <div class="message_inner">
+        <div class="message_item">
+          <div class="icon data_icon">
+            <i class="fas fa-accessible-icon alert-info"></i>
+          </div>
+          <div class="data">
+            <p class="title">
+              {{message}}
+            </p>
+          </div>
+          <div class="icon close"></div>
+        </div>
+      </div>
     </div>
+    
     {% endfor %}
     <div>
       {%block content%}{%endblock%}

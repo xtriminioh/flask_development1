@@ -86,3 +86,37 @@ body {
 }
 
 /*config login-end*/
+
+/*Config message Alert - Begin*/
+.message_wrapper{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    z-index: 999;
+}
+
+.message_backdrop{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #2d333f;
+    opacity: 0.7;
+    z-index: 2;
+}
+
+.message_wrapper .message_item{
+    z-index: 3;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background: #fff;
+    padding: 25px 25px;
+    border-radius: 3px;
+    transition: all 0.2s ease;
+    align-content: center;
+}
+
+/*Config message Alert - End*/
