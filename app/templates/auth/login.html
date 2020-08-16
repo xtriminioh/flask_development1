@@ -8,7 +8,7 @@
     <img src="{{url_for('static',filename='logo/userlogo.png')}}" class="userlogo">
     <form action="" method="post">
         <div class="control-group">
-            <h2 class="login-title"{% block title %}Login{% endblock %}</h2>
+            <h2 class="logintitle">{% block title %}Login{% endblock %}</h2>
         </div>
         <div class="form-group">
             <label for="username">Username</label>
@@ -18,7 +18,10 @@
             <label for="password">Password</label>
             <input type="password" name="password" class="form-control" id="password" placeholder="Enter Password" required />
         </div>
-        <button class="btn btn-primary btn-block">Login</button>
+        <button class="btn btn-block mybtn-login">Login</button>
+        <div class="form-group">
+            <a href="#" class="forgetpass-login">forget password</a>               
+        </div>
     </form>
 </div>
 {% endblock %}

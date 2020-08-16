@@ -13,6 +13,7 @@ body {
     font-family: "Alata";
 }
 
+/*config login-begin*/
 .login{
     position: absolute;
     top: 50%;
@@ -23,11 +24,17 @@ body {
     padding: 80px 40px;
     box-sizing: border-box;
     background: rgba(0,0,0,.5);
+    border-top-left-radius: 25px;
+    border-bottom-right-radius: 25px;
 }
 
-.title-login{
+.logintitle{
+    margin: 0;
+    padding: 0 0 20px;
+    color: gold;
     font-family: "Alata";
     font-weight: bold;
+    text-align: center;
 }
 
 .userlogo{
@@ -40,3 +47,42 @@ body {
     left: calc(50% - 50px);
 }
 
+.login label {
+    margin: 0;
+    padding: 0;
+    font-weight: bold;
+    color: white;
+}
+
+.login input{
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+::placeholder{
+    color: rgba(255,255,255,0.5);
+}
+
+.login .mybtn-login{
+    border: none;
+    outline: none;
+    height: 40px;
+    font-size: 16px;
+    color: #fff;
+    background: #FF7058;
+    cursor: pointer;
+}
+
+.login .mybtn-login:hover{
+    background: #0d6efd;
+    color: #262626;
+}
+
+.forgetpass-login{
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+/*config login-end*/
