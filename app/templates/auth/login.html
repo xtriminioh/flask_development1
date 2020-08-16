@@ -8,7 +8,7 @@
     <img src="{{url_for('static',filename='logo/userlogo.png')}}" class="userlogo">
     <form action="" method="post">
         <div class="control-group">
-            <h1 class="title-login">{% block title %}Login{% endblock %}</h1>
+            <h2 class="login-title"{% block title %}Login{% endblock %}</h2>
         </div>
         <div class="form-group">
             <label for="username">Username</label>
