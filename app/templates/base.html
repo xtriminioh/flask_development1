@@ -1,6 +1,7 @@
 <!DOCTYPE html>
   <title>Physical Inventory | {%block title%}{%endblock%}</title>
   <link rel="stylesheet" href="{{url_for('static',filename='bootstrap.min.css')}}"/>
+  <script src="{{url_for('static',filename='fontawesome.js')}}"></script>
   <link rel="stylesheet" href="{{url_for('static',filename='style.css')}}" />
 
   <!-- Navegador de Barra-->
@@ -35,9 +36,7 @@
       <div class="message_backdrop"></div>
       <div class="message_inner">
         <div class="message_item">
-          <div class="icon data_icon">
-            <i class="fas fa-accessible-icon alert-info"></i>
-          </div>
+          
           <div class="data">
             <p class="title">
               {{message}}
