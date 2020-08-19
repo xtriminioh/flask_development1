@@ -93,6 +93,8 @@ body {
     width: 100%;
     height: 100%;
     z-index: 999;
+    visibility: hidden;
+    
 }
 
 .message_backdrop{
@@ -109,14 +111,32 @@ body {
 .message_wrapper .message_item{
     z-index: 3;
     position: fixed;
-    top: 50%;
+    top: -100%;
     left: 50%;
     transform: translate(-50%,-50%);
-    background: #fff;
+    display: flex;
+    background:#ec685c;
     padding: 25px 25px;
     border-radius: 3px;
     transition: all 0.2s ease;
     align-content: center;
+}
+
+.message_wrapper .message_item .data {
+    margin: 0 50px;
+}
+
+.message_wrapper .message_item .data .title {
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+.message_wrapper .message_item .close{
+    cursor: pointer;
+}
+
+.message_wrapper .message_item .close:hover{
+    color:#5c4442;
 }
 
 /*Config message Alert - End*/
