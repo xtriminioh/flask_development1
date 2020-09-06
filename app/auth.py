@@ -13,30 +13,31 @@ def register():
     if request.method == 'POST':
         username = request.form['username']
         password = request.form['password']
-        userbath = request.form['userbath']
         db = get_db()
         error = None
+        category = None
 
         if not username:
             error = 'Username is required!'
+            category = "error"
         elif not password:
             error = 'Password is required!'
-        elif not userbath:
-            error = 'Bath is required!'
+            category = "error"
         elif db.execute(
             'SELECT id_user FROM users WHERE user_name = ?', (username,)
         ).fetchone() is not None:
             error = 'User {} is already registerd!'.format(username)
+            category = "Info"
 
         if error is None:
             db.execute(
-                'INSERT INTO users (user_name,password,bath) VALUES (?,?,?)', (
-                    username, generate_password_hash(password), userbath)
+                'INSERT INTO users (user_name,password) VALUES (?,?)', (
+                    username, generate_password_hash(password))
             )
             db.commit()
             return redirect(url_for('auth.login'))
 
-        flash(error)
+        flash(error,category)
     return render_template('auth/register.html')
 
 

@@ -13,8 +13,8 @@ body {
     font-family: "Alata";
 }
 
-/*config login-begin*/
-.login{
+/*config login and register begin*/
+.login, .register{
     position: absolute;
     top: 50%;
     left: 50%;
@@ -28,7 +28,7 @@ body {
     border-bottom-right-radius: 25px;
 }
 
-.logintitle{
+.logintitle, .registertitle{
     margin: 0;
     padding: 0 0 20px;
     color: gold;
@@ -47,14 +47,14 @@ body {
     left: calc(50% - 50px);
 }
 
-.login label {
+.login label, .register label {
     margin: 0;
     padding: 0;
     font-weight: bold;
     color: white;
 }
 
-.login input{
+.login input, .register input{
     width: 100%;
     margin-bottom: 20px;
 }
@@ -63,7 +63,7 @@ body {
     color: rgba(255,255,255,0.5);
 }
 
-.login .mybtn-login{
+.login .mybtn-login, .register .mybtn-register{
     border: none;
     outline: none;
     height: 40px;
@@ -73,7 +73,7 @@ body {
     cursor: pointer;
 }
 
-.login .mybtn-login:hover{
+.login .mybtn-login:hover, .register .mybtn-register:hover{
     background: #0d6efd;
     color: #262626;
 }
@@ -85,7 +85,7 @@ body {
     text-decoration: none;
 }
 
-/*config login-end*/
+/*config login and  register - end*/
 
 /*Config message Alert - Begin*/
 .message_wrapper{
@@ -111,7 +111,7 @@ body {
 .message_wrapper .message_item{
     z-index: 3;
     position: fixed;
-    top: -100%;
+    top: 50%;
     left: 50%;
     transform: translate(-50%,-50%);
     display: flex;
@@ -126,7 +126,14 @@ body {
     margin: 0 50px;
 }
 
-.message_wrapper .message_item .data .title {
+.message_wrapper .message_item .data .message-category{
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 5px;
+    text-transform: capitalize;
+}
+
+.message_wrapper .message_item .data .message-content {
     font-size: 18px;
     margin-bottom: 5px;
 }

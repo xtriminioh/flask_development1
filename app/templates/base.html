@@ -32,7 +32,9 @@
     <header>
       {%block header%}{%endblock%}
     </header>
-    {% for message in get_flashed_messages() %}
+    {%with messages = get_flashed_messages(with_categories=true)%}
+    {%if messages%}
+    {% for category,message in messages %}
     <div class="message_wrapper">
       <div class="message_backdrop"></div>
       <div class="message_inner">
@@ -43,9 +45,8 @@
             </svg>
           </div>
           <div class="data">
-            <p class="title">
-              {{message}}
-            </p>
+            <p class="message-category"><strong>{{category}}</strong></p>
+            <p class="message-content">{{message}}</p>
           </div>
           <div class="icon close">
             <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-x" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
@@ -58,6 +59,8 @@
     </div>
     
     {% endfor %}
+    {%endif%}
+    {%endwith%}
     <div>
       {%block content%}{%endblock%}
     </div>

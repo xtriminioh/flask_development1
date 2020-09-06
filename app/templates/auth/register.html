@@ -1,17 +1,24 @@
 {% extends 'base.html' %}
+
 {% block header %}
-    <h1>{% block title %}Register{% endblock %}</h1>
 {% endblock %}
+
 {% block content %}
-    <form action="" method="post" class="login">
+<div class="register">
+    <form action="" method="post">
+    <img src="{{url_for('static',filename='logo/userlogo.png')}}" class="userlogo">
+        <div class="form-group">
+            <h2 class="registertitle">{% block title %}Register{% endblock %}</h2>
+        </div>
         <div class="form-group">
             <label for="username">Username</label>
-            <input name="username" class="form-control" id="username" placeholder="Input Username" required />
+            <input name="username" class="form-control" id="username" placeholder="Enter Username"/>
         </div>
         <div class="form-group">
             <label for="password">Password</label>
-            <input type="password" name="password" class="form-control" id="password" placeholder="Input Password" required />
+            <input type="password" name="password" class="form-control" id="password" placeholder="Enter Password"/>
         </div>
-        <button class="btn btn-primary btn-block">Register</button>
+        <button class="btn btn-primary btn-block mybtn-register">Register</button>
     </form>
+</div>
 {% endblock %}
